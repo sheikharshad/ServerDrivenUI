@@ -19,21 +19,24 @@ The framework follows SOLID principles and is built with a modular architecture:
 ```
 ServerDrivenUI/
 ├── Models/
-│   ├── Screen.swift         # Screen and component models
+│   ├── Screen.swift        # Screen and component models
 │   └── Event.swift         # Event handling models
 │   └── Types.swift         # Event Types
 ├── Components/
 │   ├── FormComponent       # Form container
 │   ├── ContainerComponent  # Generic container
-│   ├── TextComponent      # Text display
-│   ├── InputComponent     # User input
-│   └── ButtonComponent    # Action buttons
+│   ├── TextComponent       # Text display
+│   ├── InputComponent      # User input
+│   └── ButtonComponent     # Action buttons
 │   └── DefaultComponentFactory    # Component Factory
-│   └── ComponentType    # Component Type
+│   └── ComponentType      # Component Type
 ├── Services/
 │   └── EventHandler       # Event processing
 ├── Protocols/
 │   └── ViewFactory        # Component creation
+├── Themes/
+│   └── ThemeConstants     # Theme Constants
+│   └── ViewModifiers      # ViewModifiers
 └── Views/
     └── DynamicScreenView  # Main view renderer
 ```

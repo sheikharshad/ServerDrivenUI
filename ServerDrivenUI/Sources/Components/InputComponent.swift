@@ -12,17 +12,19 @@ struct InputComponent: View {
   @Binding var formData: [String: String]
   
   var body: some View {
-    VStack(alignment: .leading, spacing: 4) {
+    VStack(alignment: .leading, spacing: ThemeConstants.Spacing.xxs) {
       if let label = data.label {
         Text(label)
-          .foregroundColor(.secondary)
+          .font(.system(size: ThemeConstants.FontSize.sm))
+          .foregroundColor(ThemeConstants.Colors.textSecondary)
       }
+      
       TextField(data.hint ?? "", text: Binding(
         get: { formData[data.name ?? ""] ?? "" },
         set: { formData[data.name ?? ""] = $0 }
       ))
-      .textFieldStyle(RoundedBorderTextFieldStyle())
-      .padding(.bottom, 8)
+      .font(.system(size: ThemeConstants.FontSize.md))
+      .inputFieldStyle()
     }
   }
 }

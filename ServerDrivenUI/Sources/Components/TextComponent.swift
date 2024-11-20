@@ -12,5 +12,8 @@ struct TextComponent: View {
   
   var body: some View {
     Text(data.text ?? "")
+      .font(.system(size: ThemeConstants.FontSize.md))
+      .foregroundColor(ThemeConstants.Colors.text)
+      .multilineTextAlignment(.leading)
   }
 }

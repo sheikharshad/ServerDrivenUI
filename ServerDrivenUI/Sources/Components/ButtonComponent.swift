@@ -13,11 +13,15 @@ struct ButtonComponent: View {
   @EnvironmentObject var eventHandler: EventHandler
   
   var body: some View {
-    Button(data.text ?? "") {
+    Button(action: {
       if data.type == DataType.submit.rawValue {
         eventHandler.handleEvent(EventType.submit.rawValue, data: formData)
       }
+    }) {
+      Text(data.text ?? "")
+        .font(.system(size: ThemeConstants.FontSize.md, weight: .semibold))
+        .frame(maxWidth: .infinity)
     }
-    .buttonStyle(.borderedProminent)
+    .primaryButtonStyle()
   }
 }

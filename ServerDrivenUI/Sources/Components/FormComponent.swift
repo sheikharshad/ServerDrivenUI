@@ -12,7 +12,7 @@ struct FormComponent: View {
   @EnvironmentObject var eventHandler: EventHandler
   
   var body: some View {
-    VStack(spacing: CGFloat(data.gap ?? 0)) {
+    VStack(spacing: CGFloat(data.gap ?? Int(ThemeConstants.Spacing.md))) {
       if let components = data.components {
         ForEach(Array(components.enumerated()), id: \.offset) { _, component in
           DefaultComponentFactory()
@@ -20,5 +20,8 @@ struct FormComponent: View {
         }
       }
     }
+    .formContainerStyle()
+    .padding(ThemeConstants.Spacing.md)
+    .background(ThemeConstants.Colors.background)
   }
 }
